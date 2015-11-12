@@ -221,7 +221,7 @@ void vz_SignalHandler(int sig)
     if (_plist.count > maxCrashLogNum)
     {
         [[NSFileManager defaultManager] removeItemAtPath:[_crashLogPath stringByAppendingPathComponent:_plist[0]] error:nil];
-        [_plist removeObject:0];
+        [_plist removeObjectAtIndex:0];
         [_plist writeToFile:[_crashLogPath stringByAppendingPathComponent:@"crashLog.plist"] atomically:YES];
     }
 }
