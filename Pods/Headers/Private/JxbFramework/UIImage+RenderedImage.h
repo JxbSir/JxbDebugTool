@@ -1,0 +1,1 @@
+../../../JxbFramework/JXBFramework/XBFramework/XBCategory/UIImage+RenderedImage.h

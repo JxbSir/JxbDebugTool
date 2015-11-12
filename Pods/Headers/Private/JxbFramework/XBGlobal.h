@@ -1,0 +1,1 @@
+../../../JxbFramework/JXBFramework/XBFramework/XBHeader/XBGlobal.h

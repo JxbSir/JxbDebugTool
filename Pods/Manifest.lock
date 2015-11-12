@@ -1,0 +1,164 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - jastor (0.2.1)
+  - JxbFramework (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBApi (= 1.5)
+    - JxbFramework/XBCategory (= 1.5)
+    - JxbFramework/XBDbHelper (= 1.5)
+    - JxbFramework/XBHeader (= 1.5)
+    - JxbFramework/XBHttp (= 1.5)
+    - JxbFramework/XBParser (= 1.5)
+    - JxbFramework/XBUi (= 1.5)
+    - JxbFramework/XBUtils (= 1.5)
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBApi (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBHttp
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBCategory (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory/UIAlertView (= 1.5)
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBCategory/UIAlertView (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBDbHelper (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBHeader (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBHttp (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory
+    - JxbFramework/XBHeader
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBParser (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBUi (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBUi/XBBaseTabVC (= 1.5)
+    - JxbFramework/XBUi/XBBaseVC (= 1.5)
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBUi/XBBaseTabVC (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory
+    - JxbFramework/XBUi/XBBaseVC
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBUi/XBBaseVC (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory
+    - JxbFramework/XBHeader
+    - JxbFramework/XBUi/XBBaseVC/BaseView (= 1.5)
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBUi/XBBaseVC/BaseView (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory
+    - JxbFramework/XBHeader
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - JxbFramework/XBUtils (1.5):
+    - AFNetworking
+    - FMDB
+    - jastor
+    - JxbFramework/XBCategory
+    - MBProgressHUD
+    - ReactiveCocoa
+    - TouchJSON
+  - MBProgressHUD (0.9.1)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - TouchJSON (1.1)
+
+DEPENDENCIES:
+  - JxbFramework (~> 1.5)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  jastor: fe9ff71f4b683698253d6a0d9a2561987fd9aff3
+  JxbFramework: df653552dae78e9d7c28807ac1e765d451054031
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  TouchJSON: 39be3595ebe489095311d97ce0c824417324cb74
+
+COCOAPODS: 0.39.0.rc.1

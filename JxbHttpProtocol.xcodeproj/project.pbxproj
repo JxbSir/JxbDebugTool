@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CCCFAAE7138A8E589F9688F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C76FAAD6247EAC4256D4E1 /* libPods.a */; };
+		D052C64F1BF4CD2800DFD138 /* JxbContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */; };
+		D052C6501BF4CD2800DFD138 /* JxbCrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */; };
+		D052C6511BF4CD2800DFD138 /* JxbCrashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */; };
+		D052C6521BF4CD2800DFD138 /* JxbDebugTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */; };
+		D052C6531BF4CD2800DFD138 /* JxbDebugVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */; };
+		D052C6541BF4CD2800DFD138 /* JxbHttpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */; };
+		D052C6551BF4CD2800DFD138 /* JxbHttpDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64A1BF4CD2800DFD138 /* JxbHttpDetailVC.m */; };
+		D052C6561BF4CD2800DFD138 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */; };
+		D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */; };
+		D0F81BE01BF4354C0097449F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BDF1BF4354C0097449F /* main.m */; };
+		D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BE21BF4354C0097449F /* AppDelegate.m */; };
+		D0F81BE61BF4354C0097449F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BE51BF4354C0097449F /* ViewController.m */; };
+		D0F81BE91BF4354C0097449F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BE71BF4354C0097449F /* Main.storyboard */; };
+		D0F81BEB1BF4354C0097449F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BEA1BF4354C0097449F /* Assets.xcassets */; };
+		D0F81BEE1BF4354C0097449F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BEC1BF4354C0097449F /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		791F876F170B3AD94DAC2119 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8FBA0C9793B6F1B0F0DA9D95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbContentVC.h; sourceTree = "<group>"; };
+		D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbContentVC.m; sourceTree = "<group>"; };
+		D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbCrashHelper.h; sourceTree = "<group>"; };
+		D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbCrashHelper.m; sourceTree = "<group>"; };
+		D052C6411BF4CD2800DFD138 /* JxbCrashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbCrashVC.h; sourceTree = "<group>"; };
+		D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbCrashVC.m; sourceTree = "<group>"; };
+		D052C6431BF4CD2800DFD138 /* JxbDebugTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbDebugTool.h; sourceTree = "<group>"; };
+		D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbDebugTool.m; sourceTree = "<group>"; };
+		D052C6451BF4CD2800DFD138 /* JxbDebugVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbDebugVC.h; sourceTree = "<group>"; };
+		D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbDebugVC.m; sourceTree = "<group>"; };
+		D052C6471BF4CD2800DFD138 /* JxbHttpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpCell.h; sourceTree = "<group>"; };
+		D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpCell.m; sourceTree = "<group>"; };
+		D052C6491BF4CD2800DFD138 /* JxbHttpDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpDetailVC.h; sourceTree = "<group>"; };
+		D052C64A1BF4CD2800DFD138 /* JxbHttpDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpDetailVC.m; sourceTree = "<group>"; };
+		D052C64B1BF4CD2800DFD138 /* JxbHttpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpProtocol.h; sourceTree = "<group>"; };
+		D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpProtocol.m; sourceTree = "<group>"; };
+		D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpVC.h; sourceTree = "<group>"; };
+		D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpVC.m; sourceTree = "<group>"; };
+		D0F81BDB1BF4354C0097449F /* JxbHttpProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JxbHttpProtocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F81BDF1BF4354C0097449F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0F81BE11BF4354C0097449F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0F81BE21BF4354C0097449F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0F81BE41BF4354C0097449F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D0F81BE51BF4354C0097449F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D0F81BE81BF4354C0097449F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0F81BEA1BF4354C0097449F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0F81BED1BF4354C0097449F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0F81BEF1BF4354C0097449F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C76FAAD6247EAC4256D4E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0F81BD81BF4354C0097449F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CCCFAAE7138A8E589F9688F /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D052C63C1BF4CD2800DFD138 /* JxbDebugTool */ = {
+			isa = PBXGroup;
+			children = (
+				D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */,
+				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
+				D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */,
+				D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */,
+				D052C6411BF4CD2800DFD138 /* JxbCrashVC.h */,
+				D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */,
+				D052C6431BF4CD2800DFD138 /* JxbDebugTool.h */,
+				D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */,
+				D052C6451BF4CD2800DFD138 /* JxbDebugVC.h */,
+				D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */,
+				D052C6471BF4CD2800DFD138 /* JxbHttpCell.h */,
+				D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */,
+				D052C6491BF4CD2800DFD138 /* JxbHttpDetailVC.h */,
+				D052C64A1BF4CD2800DFD138 /* JxbHttpDetailVC.m */,
+				D052C64B1BF4CD2800DFD138 /* JxbHttpProtocol.h */,
+				D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */,
+				D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */,
+				D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */,
+			);
+			path = JxbDebugTool;
+			sourceTree = "<group>";
+		};
+		D0F81BD21BF4354C0097449F = {
+			isa = PBXGroup;
+			children = (
+				D0F81BDD1BF4354C0097449F /* JxbHttpProtocol */,
+				D0F81BDC1BF4354C0097449F /* Products */,
+				F9ACE8D627F5CD4DB762A9FA /* Pods */,
+				FF9CF5B158423F9B7532FF29 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0F81BDC1BF4354C0097449F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0F81BDB1BF4354C0097449F /* JxbHttpProtocol.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0F81BDD1BF4354C0097449F /* JxbHttpProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D052C63C1BF4CD2800DFD138 /* JxbDebugTool */,
+				D0F81BE11BF4354C0097449F /* AppDelegate.h */,
+				D0F81BE21BF4354C0097449F /* AppDelegate.m */,
+				D0F81BE41BF4354C0097449F /* ViewController.h */,
+				D0F81BE51BF4354C0097449F /* ViewController.m */,
+				D0F81BE71BF4354C0097449F /* Main.storyboard */,
+				D0F81BEA1BF4354C0097449F /* Assets.xcassets */,
+				D0F81BEC1BF4354C0097449F /* LaunchScreen.storyboard */,
+				D0F81BEF1BF4354C0097449F /* Info.plist */,
+				D0F81BDE1BF4354C0097449F /* Supporting Files */,
+			);
+			path = JxbHttpProtocol;
+			sourceTree = "<group>";
+		};
+		D0F81BDE1BF4354C0097449F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0F81BDF1BF4354C0097449F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9ACE8D627F5CD4DB762A9FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				791F876F170B3AD94DAC2119 /* Pods.debug.xcconfig */,
+				8FBA0C9793B6F1B0F0DA9D95 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF9CF5B158423F9B7532FF29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1C76FAAD6247EAC4256D4E1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0F81BDA1BF4354C0097449F /* JxbHttpProtocol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0F81BF21BF4354C0097449F /* Build configuration list for PBXNativeTarget "JxbHttpProtocol" */;
+			buildPhases = (
+				AE9AAE1A56363153923B006D /* Check Pods Manifest.lock */,
+				D0F81BD71BF4354C0097449F /* Sources */,
+				D0F81BD81BF4354C0097449F /* Frameworks */,
+				D0F81BD91BF4354C0097449F /* Resources */,
+				E53F9476B4AA08D3E72637A1 /* Embed Pods Frameworks */,
+				BACF874149535D5DB1E6407C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JxbHttpProtocol;
+			productName = JxbHttpProtocol;
+			productReference = D0F81BDB1BF4354C0097449F /* JxbHttpProtocol.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0F81BD31BF4354C0097449F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Peter;
+				TargetAttributes = {
+					D0F81BDA1BF4354C0097449F = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = D0F81BD61BF4354C0097449F /* Build configuration list for PBXProject "JxbHttpProtocol" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0F81BD21BF4354C0097449F;
+			productRefGroup = D0F81BDC1BF4354C0097449F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0F81BDA1BF4354C0097449F /* JxbHttpProtocol */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0F81BD91BF4354C0097449F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F81BEE1BF4354C0097449F /* LaunchScreen.storyboard in Resources */,
+				D0F81BEB1BF4354C0097449F /* Assets.xcassets in Resources */,
+				D0F81BE91BF4354C0097449F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE9AAE1A56363153923B006D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BACF874149535D5DB1E6407C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E53F9476B4AA08D3E72637A1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0F81BD71BF4354C0097449F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D052C6501BF4CD2800DFD138 /* JxbCrashHelper.m in Sources */,
+				D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */,
+				D052C6521BF4CD2800DFD138 /* JxbDebugTool.m in Sources */,
+				D0F81BE61BF4354C0097449F /* ViewController.m in Sources */,
+				D052C6511BF4CD2800DFD138 /* JxbCrashVC.m in Sources */,
+				D052C6541BF4CD2800DFD138 /* JxbHttpCell.m in Sources */,
+				D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */,
+				D052C6551BF4CD2800DFD138 /* JxbHttpDetailVC.m in Sources */,
+				D0F81BE01BF4354C0097449F /* main.m in Sources */,
+				D052C6531BF4CD2800DFD138 /* JxbDebugVC.m in Sources */,
+				D052C6561BF4CD2800DFD138 /* JxbHttpProtocol.m in Sources */,
+				D052C64F1BF4CD2800DFD138 /* JxbContentVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0F81BE71BF4354C0097449F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F81BE81BF4354C0097449F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0F81BEC1BF4354C0097449F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F81BED1BF4354C0097449F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0F81BF01BF4354C0097449F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D0F81BF11BF4354C0097449F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0F81BF31BF4354C0097449F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 791F876F170B3AD94DAC2119 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JxbHttpProtocol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.Jxb.JxbDebugTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D0F81BF41BF4354C0097449F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FBA0C9793B6F1B0F0DA9D95 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JxbHttpProtocol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.Jxb.JxbDebugTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0F81BD61BF4354C0097449F /* Build configuration list for PBXProject "JxbHttpProtocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F81BF01BF4354C0097449F /* Debug */,
+				D0F81BF11BF4354C0097449F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0F81BF21BF4354C0097449F /* Build configuration list for PBXNativeTarget "JxbHttpProtocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F81BF31BF4354C0097449F /* Debug */,
+				D0F81BF41BF4354C0097449F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0F81BD31BF4354C0097449F /* Project object */;
+}
