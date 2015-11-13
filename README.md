@@ -24,4 +24,4 @@
 
 
 ##展示图
-![](https://raw.githubusercontent.com/JxbSir/JXBAdPageView/master/screen/screenshot.gif)
+![](https://raw.githubusercontent.com/JxbSir/JxbDebugTool/master/1.pic.jpg)
