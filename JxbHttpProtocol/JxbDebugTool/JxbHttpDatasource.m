@@ -31,8 +31,14 @@
 }
 
 - (void)addHttpRequset:(JxbHttpModel*)model {
-    @synchronized(self) {
+    @synchronized(self.httpArray) {
         [self.httpArray insertObject:model atIndex:0];
+    }
+}
+
+- (void)clear {
+    @synchronized(self.httpArray) {
+        [self.httpArray removeAllObjects];
     }
 }
 @end

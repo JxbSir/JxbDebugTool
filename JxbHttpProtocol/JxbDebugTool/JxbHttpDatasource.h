@@ -31,4 +31,9 @@
  *  @param model http
  */
 - (void)addHttpRequset:(JxbHttpModel*)model;
+
+/**
+ *  清空
+ */
+- (void)clear;
 @end

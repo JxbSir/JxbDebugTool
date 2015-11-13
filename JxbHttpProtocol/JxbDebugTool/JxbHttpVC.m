@@ -35,6 +35,15 @@
     UIBarButtonItem *btnleft = [[UIBarButtonItem alloc] initWithCustomView:btnclose];
     self.navigationItem.leftBarButtonItem = btnleft;
     
+    UIButton *btnclear = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    btnclear.titleLabel.font = [UIFont systemFontOfSize:13];
+    [btnclear setTitle:@"清空" forState:UIControlStateNormal];
+    [btnclear addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
+    [btnclear setTitleColor:[JxbDebugTool shareInstance].mainColor forState:UIControlStateNormal];
+    
+    UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnclear];
+    self.navigationItem.leftBarButtonItem = btnright;
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
@@ -50,6 +59,12 @@
 
 - (void)dismissViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)clearAction {
+    [[JxbHttpDatasource shareInstance] clear];
+    self.listData = nil;
+    [self.tableView reloadData];
 }
 
 - (void)reloadHttp {
