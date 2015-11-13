@@ -15,6 +15,7 @@
 
 @interface JxbDebugTool()
 @property (nonatomic, strong) JxbDebugVC    *debugVC;
+@property (nonatomic, strong) UIWindow      *debugWin;
 @end
 
 @implementation JxbDebugTool
@@ -32,6 +33,7 @@
     self = [super init];
     if (self) {
         self.mainColor = [UIColor redColor];
+        self.debugWin = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
     }
     return self;
 }
@@ -47,23 +49,17 @@
 }
 
 - (void)showOnStatusBar {
-    UIWindow* win = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-    [[[UIApplication sharedApplication].delegate window] addSubview:win];
-    win.backgroundColor = [UIColor clearColor];
-    win.windowLevel = UIWindowLevelStatusBar+1;
-    win.hidden = NO;
-    [win makeKeyAndVisible];
-    [win makeKeyWindow];
+    self.debugWin.windowLevel = UIWindowLevelStatusBar+1;
+    self.debugWin.hidden = NO;
     
-    
-    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 + 40, 2, 40, 15)];
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 + 35, 2, 40, 15)];
     btn.backgroundColor = self.mainColor;
     btn.layer.cornerRadius = 3;
     btn.titleLabel.font = [UIFont systemFontOfSize:11];
     [btn setTitle:@"Debug" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showDebug) forControlEvents:UIControlEventTouchUpInside];
-    [win addSubview:btn];
+    [self.debugWin addSubview:btn];
 }
 
 - (void)showDebug {
@@ -73,9 +69,13 @@
         UINavigationController* nav1 = [[UINavigationController alloc] initWithRootViewController:[JxbHttpVC new]];
         UINavigationController* nav2 = [[UINavigationController alloc] initWithRootViewController:[JxbCrashVC new]];
         nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Http" image:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [nav1.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateNormal];
+        [nav1.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.mainColor,NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateSelected];
+        
+        
         nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Crash" image:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateNormal];
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:self.mainColor,NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateSelected];
+        [nav2.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor],NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateNormal];
+        [nav2.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.mainColor,NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateSelected];
         
         // customise NavigationBar UI Effect
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:self.mainColor}];
