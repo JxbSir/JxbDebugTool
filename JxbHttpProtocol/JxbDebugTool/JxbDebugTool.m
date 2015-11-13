@@ -52,7 +52,7 @@
     self.debugWin.windowLevel = UIWindowLevelStatusBar+1;
     self.debugWin.hidden = NO;
     
-    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 + 35, 2, 40, 15)];
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(45, 2, 47, 15)];
     btn.backgroundColor = self.mainColor;
     btn.layer.cornerRadius = 3;
     btn.titleLabel.font = [UIFont systemFontOfSize:11];
