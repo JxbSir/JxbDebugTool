@@ -38,6 +38,7 @@
     
     txt = [[UITextView alloc] initWithFrame:self.view.bounds];
     [txt setEditable:NO];
+    txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     txt.text = self.content;
     [self.view addSubview:txt];
 }
