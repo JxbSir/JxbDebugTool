@@ -158,7 +158,7 @@ const int maxCrashLogNum  = 20;
 - (void)saveToFile:(NSMutableDictionary*)dict
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyyMMdd_HHmmss"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString* dateString = [formatter stringFromDate:[NSDate date]];
     
     //add date
@@ -171,10 +171,10 @@ const int maxCrashLogNum  = 20;
     BOOL succeed = [ dict writeToFile:savePath atomically:YES];
     if ( NO == succeed )
     {
-        NSLog(@"VZInspector:Save crash report failed!");
+        NSLog(@"JxbDebugTool:crash report failed!");
     }
     else
-        NSLog(@"VZInspector:save crash report succeed!");
+        NSLog(@"JxbDebugTool:save crash report succeed!");
     
     [_plist insertObject:dateString atIndex:0];
     [_plist writeToFile:[_crashLogPath stringByAppendingPathComponent:@"crashLog.plist"] atomically:YES];
