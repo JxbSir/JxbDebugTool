@@ -53,7 +53,7 @@
 }
 
 - (void)reloadHttp {
-    self.listData = [[[JxbDebugTool shareInstance] httpArray] copy];
+    self.listData = [[[JxbHttpDatasource shareInstance] httpArray] copy];
     [self.tableView reloadData];
 }
 

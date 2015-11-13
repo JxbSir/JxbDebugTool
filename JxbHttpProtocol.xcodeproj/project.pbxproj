@@ -23,6 +23,7 @@
 		D0F81BE91BF4354C0097449F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BE71BF4354C0097449F /* Main.storyboard */; };
 		D0F81BEB1BF4354C0097449F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BEA1BF4354C0097449F /* Assets.xcassets */; };
 		D0F81BEE1BF4354C0097449F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F81BEC1BF4354C0097449F /* LaunchScreen.storyboard */; };
+		D0FF73991BF5788900615B23 /* JxbHttpDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FF73981BF5788900615B23 /* JxbHttpDatasource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		D0F81BEA1BF4354C0097449F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F81BED1BF4354C0097449F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F81BEF1BF4354C0097449F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FF73971BF5788900615B23 /* JxbHttpDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpDatasource.h; sourceTree = "<group>"; };
+		D0FF73981BF5788900615B23 /* JxbHttpDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpDatasource.m; sourceTree = "<group>"; };
 		F1C76FAAD6247EAC4256D4E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,24 +77,26 @@
 		D052C63C1BF4CD2800DFD138 /* JxbDebugTool */ = {
 			isa = PBXGroup;
 			children = (
-				D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */,
-				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
-				D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */,
-				D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */,
-				D052C6411BF4CD2800DFD138 /* JxbCrashVC.h */,
-				D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */,
 				D052C6431BF4CD2800DFD138 /* JxbDebugTool.h */,
 				D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */,
 				D052C6451BF4CD2800DFD138 /* JxbDebugVC.h */,
 				D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */,
+				D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */,
+				D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */,
+				D052C6411BF4CD2800DFD138 /* JxbCrashVC.h */,
+				D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */,
 				D052C6471BF4CD2800DFD138 /* JxbHttpCell.h */,
 				D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */,
+				D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */,
+				D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */,
 				D052C6491BF4CD2800DFD138 /* JxbHttpDetailVC.h */,
 				D052C64A1BF4CD2800DFD138 /* JxbHttpDetailVC.m */,
 				D052C64B1BF4CD2800DFD138 /* JxbHttpProtocol.h */,
 				D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */,
-				D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */,
-				D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */,
+				D0FF73971BF5788900615B23 /* JxbHttpDatasource.h */,
+				D0FF73981BF5788900615B23 /* JxbHttpDatasource.m */,
+				D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */,
+				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
 			);
 			path = JxbDebugTool;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FF73991BF5788900615B23 /* JxbHttpDatasource.m in Sources */,
 				D052C6501BF4CD2800DFD138 /* JxbCrashHelper.m in Sources */,
 				D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */,
 				D052C6521BF4CD2800DFD138 /* JxbDebugTool.m in Sources */,

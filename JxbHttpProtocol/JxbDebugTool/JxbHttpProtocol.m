@@ -10,11 +10,10 @@
 #import <UIKit/UIKit.h>
 #import "JxbDebugVC.h"
 #import "JxbDebugTool.h"
+#import "JxbHttpDatasource.h"
 
 #define myProtocolKey   @"JxbHttpProtocol"
 
-@implementation JxbHttpModel
-@end
 
 @interface JxbHttpProtocol()<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 @property (nonatomic, strong) NSURLConnection *connection;
@@ -80,7 +79,7 @@
     model.startTime = [formatter stringFromDate:self.startDate];
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - [self.startDate timeIntervalSince1970]];
     
-    [[JxbDebugTool shareInstance] addHttpRequset:model];
+    [[JxbHttpDatasource shareInstance] addHttpRequset:model];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyKeyReloadHttp object:nil];
 }
 

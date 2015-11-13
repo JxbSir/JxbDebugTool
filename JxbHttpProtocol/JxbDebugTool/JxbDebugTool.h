@@ -14,7 +14,7 @@
 
 
 @interface JxbDebugTool : NSObject
-@property (nonatomic,strong,readonly) NSMutableArray    *httpArray;
+
 @property (nonatomic,copy) UIColor* mainColor;
 
 
@@ -24,10 +24,5 @@
  */
 - (void)enableDebugMode;
 
-/**
- *  记录http请求
- *
- *  @param model http
- */
-- (void)addHttpRequset:(JxbHttpModel*)model;
+
 @end

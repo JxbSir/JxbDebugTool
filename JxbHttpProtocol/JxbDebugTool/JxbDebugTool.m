@@ -31,7 +31,6 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _httpArray = [NSMutableArray array];
         self.mainColor = [UIColor redColor];
     }
     return self;
@@ -89,9 +88,4 @@
     }
 }
 
-- (void)addHttpRequset:(JxbHttpModel*)model {
-    @synchronized(self) {
-        [self.httpArray insertObject:model atIndex:0];
-    }
-}
 @end
