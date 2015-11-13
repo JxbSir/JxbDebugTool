@@ -42,7 +42,7 @@
     [btnclear setTitleColor:[JxbDebugTool shareInstance].mainColor forState:UIControlStateNormal];
     
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnclear];
-    self.navigationItem.leftBarButtonItem = btnright;
+    self.navigationItem.rightBarButtonItem = btnright;
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor clearColor];

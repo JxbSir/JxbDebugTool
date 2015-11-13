@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JxbBaseVC.h"
 
-@interface JxbContentVC : UIViewController
+@interface JxbContentVC : JxbBaseVC
 @property (nonatomic,copy)NSString  *content;
 @end

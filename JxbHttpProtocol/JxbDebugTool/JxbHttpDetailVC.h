@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "JxbHttpDatasource.h"
+#import "JxbBaseVC.h"
 
-@interface JxbHttpDetailVC : UIViewController
+@interface JxbHttpDetailVC : JxbBaseVC
 @property (nonatomic,strong)JxbHttpModel    *detail;
 @end

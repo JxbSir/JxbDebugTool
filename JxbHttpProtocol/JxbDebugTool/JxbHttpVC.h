@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JxbBaseVC.h"
 
-@interface JxbHttpVC : UIViewController
+@interface JxbHttpVC : JxbBaseVC
 
 @end

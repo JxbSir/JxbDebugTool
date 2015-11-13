@@ -36,9 +36,10 @@
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnCopy];
     self.navigationItem.rightBarButtonItem = btnright;
     
-    txt = [[UITextView alloc] initWithFrame:self.view.bounds];
+    txt = [[UITextView alloc] init];
     [txt setEditable:NO];
     txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    txt.frame = self.view.bounds;
     txt.text = self.content;
     [self.view addSubview:txt];
 }
