@@ -118,45 +118,6 @@ const int maxCrashLogNum  = 20;
     
 }
 
-void vz_HandleException(NSException *exception)
-{
-    [[JxbCrashHelper sharedInstance] saveException:exception];
-    [exception raise];
-}
-
-void vz_SignalHandler(int sig)
-{
-    [[JxbCrashHelper sharedInstance] saveSignal:sig];
-    signal(sig, SIG_DFL);
-    raise(sig);
-}
-
-- (void)install
-{
-    if (_isInstalled) {
-        return;
-    }
-    _isInstalled = YES;
-    //注册回调函数
-    NSSetUncaughtExceptionHandler(&vz_HandleException);
-    signal(SIGABRT, vz_SignalHandler);
-    signal(SIGILL, vz_SignalHandler);
-    signal(SIGSEGV, vz_SignalHandler);
-    signal(SIGFPE, vz_SignalHandler);
-    signal(SIGBUS, vz_SignalHandler);
-    signal(SIGPIPE, vz_SignalHandler);
-}
-
-- (void)dealloc
-{
-    signal( SIGABRT,	SIG_DFL );
-    signal( SIGBUS,		SIG_DFL );
-    signal( SIGFPE,		SIG_DFL );
-    signal( SIGILL,		SIG_DFL );
-    signal( SIGPIPE,	SIG_DFL );
-    signal( SIGSEGV,	SIG_DFL );
-}
-
 - (void)saveException:(NSException*)exception
 {
     NSMutableDictionary * detail = [NSMutableDictionary dictionary];
@@ -223,6 +184,46 @@ void vz_SignalHandler(int sig)
         [[NSFileManager defaultManager] removeItemAtPath:[_crashLogPath stringByAppendingPathComponent:_plist[0]] error:nil];
         [_plist writeToFile:[_crashLogPath stringByAppendingPathComponent:@"crashLog.plist"] atomically:YES];
     }
+}
+
+#pragma mark - register
+void jxb_HandleException(NSException *exception)
+{
+    [[JxbCrashHelper sharedInstance] saveException:exception];
+    [exception raise];
+}
+
+void jxb_SignalHandler(int sig)
+{
+    [[JxbCrashHelper sharedInstance] saveSignal:sig];
+    signal(sig, SIG_DFL);
+    raise(sig);
+}
+
+- (void)install
+{
+    if (_isInstalled) {
+        return;
+    }
+    _isInstalled = YES;
+    //注册回调函数
+    NSSetUncaughtExceptionHandler(&jxb_HandleException);
+    signal(SIGABRT, jxb_SignalHandler);
+    signal(SIGILL, jxb_SignalHandler);
+    signal(SIGSEGV, jxb_SignalHandler);
+    signal(SIGFPE, jxb_SignalHandler);
+    signal(SIGBUS, jxb_SignalHandler);
+    signal(SIGPIPE, jxb_SignalHandler);
+}
+
+- (void)dealloc
+{
+    signal( SIGABRT,	SIG_DFL );
+    signal( SIGBUS,		SIG_DFL );
+    signal( SIGFPE,		SIG_DFL );
+    signal( SIGILL,		SIG_DFL );
+    signal( SIGPIPE,	SIG_DFL );
+    signal( SIGSEGV,	SIG_DFL );
 }
 @end
 
