@@ -12,10 +12,17 @@
 #import "JxbCrashVC.h"
 #import "JxbHttpVC.h"
 #import "JxbCrashHelper.h"
+#import "JxbMemoryHelper.h"
+
+#define KB	(1024)
+#define MB	(KB * 1024)
+#define GB	(MB * 1024)
 
 @interface JxbDebugTool()
 @property (nonatomic, strong) JxbDebugVC    *debugVC;
 @property (nonatomic, strong) UIWindow      *debugWin;
+@property (nonatomic, strong) UIButton      *debugBtn;
+@property (nonatomic, strong) NSTimer       *debugTimer;
 @end
 
 @implementation JxbDebugTool
@@ -34,6 +41,9 @@
     if (self) {
         self.mainColor = [UIColor redColor];
         self.debugWin = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+        
+        self.debugTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMonitor) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.debugTimer forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
@@ -52,14 +62,14 @@
     self.debugWin.windowLevel = UIWindowLevelStatusBar+1;
     self.debugWin.hidden = NO;
     
-    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(45, 2, 47, 15)];
-    btn.backgroundColor = self.mainColor;
-    btn.layer.cornerRadius = 3;
-    btn.titleLabel.font = [UIFont systemFontOfSize:11];
-    [btn setTitle:@"Debug" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(showDebug) forControlEvents:UIControlEventTouchUpInside];
-    [self.debugWin addSubview:btn];
+    self.debugBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, 2, 91, 15)];
+    self.debugBtn.backgroundColor = self.mainColor;
+    self.debugBtn.layer.cornerRadius = 3;
+    self.debugBtn.titleLabel.font = [UIFont systemFontOfSize:10];
+    [self.debugBtn setTitle:@"Debug Starting" forState:UIControlStateNormal];
+    [self.debugBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.debugBtn addTarget:self action:@selector(showDebug) forControlEvents:UIControlEventTouchUpInside];
+    [self.debugWin addSubview:self.debugBtn];
 }
 
 - (void)showDebug {
@@ -88,4 +98,29 @@
     }
 }
 
+- (void)timerMonitor {
+    unsigned long long used = [JxbMemoryHelper bytesOfUsedMemory];
+    NSString* text = [self number2String:used];
+    [self.debugBtn setTitle:[NSString stringWithFormat:@"Debug(%@)",text] forState:UIControlStateNormal];
+}
+
+- (NSString* )number2String:(int64_t)n
+{
+    if ( n < KB )
+    {
+        return [NSString stringWithFormat:@"%lldB", n];
+    }
+    else if ( n < MB )
+    {
+        return [NSString stringWithFormat:@"%.1fK", (float)n / (float)KB];
+    }
+    else if ( n < GB )
+    {
+        return [NSString stringWithFormat:@"%.1fM", (float)n / (float)MB];
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"%.1fG", (float)n / (float)GB];
+    }
+}
 @end

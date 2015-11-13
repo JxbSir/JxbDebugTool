@@ -17,6 +17,7 @@
 		D052C6551BF4CD2800DFD138 /* JxbHttpDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64A1BF4CD2800DFD138 /* JxbHttpDetailVC.m */; };
 		D052C6561BF4CD2800DFD138 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */; };
 		D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */; };
+		D0578CF81BF5D38900F9B9C1 /* JxbMemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */; };
 		D0F81BE01BF4354C0097449F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BDF1BF4354C0097449F /* main.m */; };
 		D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BE21BF4354C0097449F /* AppDelegate.m */; };
 		D0F81BE61BF4354C0097449F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F81BE51BF4354C0097449F /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpProtocol.m; sourceTree = "<group>"; };
 		D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbHttpVC.h; sourceTree = "<group>"; };
 		D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpVC.m; sourceTree = "<group>"; };
+		D0578CF61BF5D38900F9B9C1 /* JxbMemoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbMemoryHelper.h; sourceTree = "<group>"; };
+		D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbMemoryHelper.m; sourceTree = "<group>"; };
 		D0F81BDB1BF4354C0097449F /* JxbHttpProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JxbHttpProtocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F81BDF1BF4354C0097449F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0F81BE11BF4354C0097449F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
 				D0FF739A1BF58C8B00615B23 /* JxbBaseVC.h */,
 				D0FF739B1BF58C8B00615B23 /* JxbBaseVC.m */,
+				D0578CF61BF5D38900F9B9C1 /* JxbMemoryHelper.h */,
+				D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */,
 			);
 			path = JxbDebugTool;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				D052C6541BF4CD2800DFD138 /* JxbHttpCell.m in Sources */,
 				D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */,
 				D052C6551BF4CD2800DFD138 /* JxbHttpDetailVC.m in Sources */,
+				D0578CF81BF5D38900F9B9C1 /* JxbMemoryHelper.m in Sources */,
 				D0F81BE01BF4354C0097449F /* main.m in Sources */,
 				D0FF739C1BF58C8B00615B23 /* JxbBaseVC.m in Sources */,
 				D052C6531BF4CD2800DFD138 /* JxbDebugVC.m in Sources */,
