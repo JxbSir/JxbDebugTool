@@ -21,10 +21,10 @@ static vm_statistics_data_t jVMStats;
     return  stat.bytes_used;
 }
 
-+ (unsigned long long)bytesOfFreeMemory
-{
-    return NSRealMemoryAvailable();
-}
+//+ (unsigned long long)bytesOfFreeMemory
+//{
+//    return NSRealMemoryAvailable();
+//}
 
 + (unsigned long long)bytesOfTotalMemory
 {
