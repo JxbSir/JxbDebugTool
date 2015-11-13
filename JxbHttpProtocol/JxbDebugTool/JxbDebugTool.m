@@ -44,6 +44,7 @@
         
         self.debugTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMonitor) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.debugTimer forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
     }
     return self;
 }
