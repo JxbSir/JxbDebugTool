@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JxbHttpProtocol.h"
 #import <UIKit/UIKit.h>
 
 #define kNotifyKeyReloadHttp    @"kNotifyKeyReloadHttp"
