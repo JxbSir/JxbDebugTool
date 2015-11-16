@@ -125,9 +125,9 @@
                 weakTxt.attributedText = string;
             });
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-               [weakTxt scrollRectToVisible:CGRectMake(0, weakTxt.contentSize.height, weakTxt.frame.size.width, 1) animated:NO];
-            });
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//               [weakTxt scrollRectToVisible:CGRectMake(0, weakTxt.contentSize.height, weakTxt.frame.size.width, 1) animated:NO];
+//            });
         }
     });
 }
@@ -142,9 +142,9 @@
     aslresponse response = asl_search(NULL, query);
     NSUInteger numberOfLogs = maxCount;
     NSMutableArray *logMessages = [NSMutableArray arrayWithCapacity:numberOfLogs];
-//    size_t count = asl_count(response);
+    size_t count = asl_count(response);
     for (int i=0; i<numberOfLogs; i++) {
-        aslmsg msg = asl_get_index(response, i);
+        aslmsg msg = asl_get_index(response, count - i - 1);
         if (msg != NULL) {
             JxbLogModel* model = [JxbLogModel messageFromASLMessage:msg];
             [logMessages addObject:model];
