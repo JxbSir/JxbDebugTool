@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CCCFAAE7138A8E589F9688F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C76FAAD6247EAC4256D4E1 /* libPods.a */; };
+		D05112E41BF9A1F500126DC8 /* JxbLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D05112E31BF9A1F500126DC8 /* JxbLogVC.m */; };
 		D052C64F1BF4CD2800DFD138 /* JxbContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */; };
 		D052C6501BF4CD2800DFD138 /* JxbCrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */; };
 		D052C6511BF4CD2800DFD138 /* JxbCrashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		791F876F170B3AD94DAC2119 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8FBA0C9793B6F1B0F0DA9D95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D05112E21BF9A1F500126DC8 /* JxbLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbLogVC.h; sourceTree = "<group>"; };
+		D05112E31BF9A1F500126DC8 /* JxbLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbLogVC.m; sourceTree = "<group>"; };
 		D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbContentVC.h; sourceTree = "<group>"; };
 		D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbContentVC.m; sourceTree = "<group>"; };
 		D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbCrashHelper.h; sourceTree = "<group>"; };
@@ -80,17 +83,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D052C63C1BF4CD2800DFD138 /* JxbDebugTool */ = {
+		D05112DD1BF9A1A500126DC8 /* Crash */ = {
 			isa = PBXGroup;
 			children = (
-				D052C6431BF4CD2800DFD138 /* JxbDebugTool.h */,
-				D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */,
-				D052C6451BF4CD2800DFD138 /* JxbDebugVC.h */,
-				D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */,
 				D052C63F1BF4CD2800DFD138 /* JxbCrashHelper.h */,
 				D052C6401BF4CD2800DFD138 /* JxbCrashHelper.m */,
 				D052C6411BF4CD2800DFD138 /* JxbCrashVC.h */,
 				D052C6421BF4CD2800DFD138 /* JxbCrashVC.m */,
+			);
+			name = Crash;
+			sourceTree = "<group>";
+		};
+		D05112DE1BF9A1AF00126DC8 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D05112E21BF9A1F500126DC8 /* JxbLogVC.h */,
+				D05112E31BF9A1F500126DC8 /* JxbLogVC.m */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
+		D05112DF1BF9A1B300126DC8 /* Http */ = {
+			isa = PBXGroup;
+			children = (
 				D052C6471BF4CD2800DFD138 /* JxbHttpCell.h */,
 				D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */,
 				D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */,
@@ -101,12 +116,42 @@
 				D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */,
 				D0FF73971BF5788900615B23 /* JxbHttpDatasource.h */,
 				D0FF73981BF5788900615B23 /* JxbHttpDatasource.m */,
+			);
+			name = Http;
+			sourceTree = "<group>";
+		};
+		D05112E01BF9A1C500126DC8 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				D0578CF61BF5D38900F9B9C1 /* JxbMemoryHelper.h */,
+				D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */,
+			);
+			name = Memory;
+			sourceTree = "<group>";
+		};
+		D05112E11BF9A1D300126DC8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D052C6431BF4CD2800DFD138 /* JxbDebugTool.h */,
+				D052C6441BF4CD2800DFD138 /* JxbDebugTool.m */,
+				D052C6451BF4CD2800DFD138 /* JxbDebugVC.h */,
+				D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */,
 				D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */,
 				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
 				D0FF739A1BF58C8B00615B23 /* JxbBaseVC.h */,
 				D0FF739B1BF58C8B00615B23 /* JxbBaseVC.m */,
-				D0578CF61BF5D38900F9B9C1 /* JxbMemoryHelper.h */,
-				D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		D052C63C1BF4CD2800DFD138 /* JxbDebugTool */ = {
+			isa = PBXGroup;
+			children = (
+				D05112E11BF9A1D300126DC8 /* Tool */,
+				D05112E01BF9A1C500126DC8 /* Memory */,
+				D05112DF1BF9A1B300126DC8 /* Http */,
+				D05112DE1BF9A1AF00126DC8 /* Log */,
+				D05112DD1BF9A1A500126DC8 /* Crash */,
 			);
 			path = JxbDebugTool;
 			sourceTree = "<group>";
@@ -296,6 +341,7 @@
 				D052C6501BF4CD2800DFD138 /* JxbCrashHelper.m in Sources */,
 				D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */,
 				D052C6521BF4CD2800DFD138 /* JxbDebugTool.m in Sources */,
+				D05112E41BF9A1F500126DC8 /* JxbLogVC.m in Sources */,
 				D0F81BE61BF4354C0097449F /* ViewController.m in Sources */,
 				D052C6511BF4CD2800DFD138 /* JxbCrashVC.m in Sources */,
 				D052C6541BF4CD2800DFD138 /* JxbHttpCell.m in Sources */,

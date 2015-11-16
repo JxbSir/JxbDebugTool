@@ -15,6 +15,7 @@
 @interface JxbDebugTool : NSObject
 
 @property (nonatomic,copy) UIColor* mainColor;
+@property (nonatomic,assign) int    maxLogsCount;
 
 
 + (instancetype)shareInstance;
