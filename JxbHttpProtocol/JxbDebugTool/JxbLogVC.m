@@ -97,6 +97,9 @@
     [btnclose addTarget:self action:@selector(dismissViewController) forControlEvents:UIControlEventTouchUpInside];
     [btnclose setTitleColor:[JxbDebugTool shareInstance].mainColor forState:UIControlStateNormal];
     
+    UIBarButtonItem *barclose = [[UIBarButtonItem alloc] initWithCustomView:btnclose];
+    self.navigationItem.leftBarButtonItem = barclose;
+    
     UIButton *btnrefresh = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     btnrefresh.titleLabel.font = [UIFont systemFontOfSize:13];
     [btnrefresh setTitle:@"刷新" forState:UIControlStateNormal];
