@@ -90,6 +90,13 @@
     txt.frame = self.view.bounds;
     [self.view addSubview:txt];
     
+    
+    UIButton *btnclose = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    btnclose.titleLabel.font = [UIFont systemFontOfSize:13];
+    [btnclose setTitle:@"关闭" forState:UIControlStateNormal];
+    [btnclose addTarget:self action:@selector(dismissViewController) forControlEvents:UIControlEventTouchUpInside];
+    [btnclose setTitleColor:[JxbDebugTool shareInstance].mainColor forState:UIControlStateNormal];
+    
     UIButton *btnrefresh = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     btnrefresh.titleLabel.font = [UIFont systemFontOfSize:13];
     [btnrefresh setTitle:@"刷新" forState:UIControlStateNormal];
@@ -101,6 +108,10 @@
     
     
     [self loadLogs];
+}
+
+- (void)dismissViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)loadLogs {
