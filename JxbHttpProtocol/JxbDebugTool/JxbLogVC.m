@@ -142,8 +142,7 @@
     aslresponse response = asl_search(NULL, query);
     NSUInteger numberOfLogs = maxCount;
     NSMutableArray *logMessages = [NSMutableArray arrayWithCapacity:numberOfLogs];
-    size_t count = asl_count(response);
-    
+//    size_t count = asl_count(response);
     for (int i=0; i<numberOfLogs; i++) {
         aslmsg msg = asl_get_index(response, i);
         if (msg != NULL) {
