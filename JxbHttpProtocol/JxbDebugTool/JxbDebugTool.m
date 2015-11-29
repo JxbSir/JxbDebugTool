@@ -19,11 +19,24 @@
 #define MB	(KB * 1024)
 #define GB	(MB * 1024)
 
+@interface JxbDebugWindow : UIWindow
+
+@end
+
+@implementation JxbDebugWindow
+
+- (void)becomeKeyWindow {
+    //uisheetview
+    [[[UIApplication sharedApplication].delegate window] makeKeyWindow];
+}
+
+@end
+
 @interface JxbDebugTool()
-@property (nonatomic, strong) JxbDebugVC    *debugVC;
-@property (nonatomic, strong) UIWindow      *debugWin;
-@property (nonatomic, strong) UIButton      *debugBtn;
-@property (nonatomic, strong) NSTimer       *debugTimer;
+@property (nonatomic, strong) JxbDebugVC        *debugVC;
+@property (nonatomic, strong) JxbDebugWindow    *debugWin;
+@property (nonatomic, strong) UIButton          *debugBtn;
+@property (nonatomic, strong) NSTimer           *debugTimer;
 @end
 
 @implementation JxbDebugTool
@@ -41,7 +54,7 @@
     self = [super init];
     if (self) {
         self.mainColor = [UIColor redColor];
-        self.debugWin = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+        self.debugWin = [[JxbDebugWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
         
         self.debugTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMonitor) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:self.debugTimer forMode:NSDefaultRunLoopMode];
