@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSURLResponse *response;
 @property (nonatomic, strong) NSMutableData *data;
 @property (nonatomic, strong) NSError *error;
-@property (nonatomic, strong) NSDate  *startDate;
+@property (nonatomic, assign) NSTimeInterval  startTime;
 @end
 
 @implementation JxbHttpProtocol
@@ -55,7 +55,7 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     self.connection = [[NSURLConnection alloc] initWithRequest:[[self class] canonicalRequestForRequest:self.request] delegate:self startImmediately:YES];
 #pragma clang diagnostic pop
-    self.startDate = [NSDate date];
+    self.startTime = [[NSDate date] timeIntervalSince1970];
 }
 
 - (void)stopLoading {
@@ -76,8 +76,8 @@
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    model.startTime = [formatter stringFromDate:self.startDate];
-    model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - [self.startDate timeIntervalSince1970]];
+    model.startTime = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:self.startTime]];
+    model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];
     
     [[JxbHttpDatasource shareInstance] addHttpRequset:model];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyKeyReloadHttp object:nil];
