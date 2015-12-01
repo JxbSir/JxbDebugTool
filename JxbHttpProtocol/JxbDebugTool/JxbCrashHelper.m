@@ -195,9 +195,9 @@ void jxb_HandleException(NSException *exception)
 
 void jxb_SignalHandler(int sig)
 {
-    [[JxbCrashHelper sharedInstance] saveSignal:sig];
-    signal(sig, SIG_DFL);
-    raise(sig);
+//    [[JxbCrashHelper sharedInstance] saveSignal:sig];
+//    signal(sig, SIG_DFL);
+//    raise(sig);
 }
 
 - (void)install
