@@ -91,7 +91,9 @@
         value = self.detail.mineType;
     }
     else if (indexPath.row == 4) {
-        value = self.detail.startTime;
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        value = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:self.detail.startTime.doubleValue]];
     }
     else if (indexPath.row == 5) {
         value = self.detail.totalDuration;

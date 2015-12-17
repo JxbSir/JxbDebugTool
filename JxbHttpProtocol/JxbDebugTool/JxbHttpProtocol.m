@@ -73,7 +73,7 @@
         model.responseBody = [self prettyJSONStringFromData:self.data];
     }
     model.mineType = self.response.MIMEType;
-
+    
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];
     model.startTime = [NSString stringWithFormat:@"%fs",self.startTime];
     
