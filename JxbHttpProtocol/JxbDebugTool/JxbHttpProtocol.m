@@ -73,11 +73,9 @@
         model.responseBody = [self prettyJSONStringFromData:self.data];
     }
     model.mineType = self.response.MIMEType;
-    
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    model.startTime = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:self.startTime]];
+
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];
+    model.startTime = [NSString stringWithFormat:@"%fs",self.startTime];
     
     [[JxbHttpDatasource shareInstance] addHttpRequset:model];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyKeyReloadHttp object:nil];
