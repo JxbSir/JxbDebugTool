@@ -112,7 +112,9 @@
         [nav3.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:self.mainColor,NSFontAttributeName:[UIFont systemFontOfSize:30]} forState:UIControlStateSelected];
 
         self.debugVC.viewControllers = @[nav1,nav2,nav3];
-        [[[[UIApplication sharedApplication].delegate window] rootViewController] presentViewController:self.debugVC animated:YES completion:nil];
+        UIViewController* vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
+        UIViewController* vc2 = vc.presentedViewController;
+        [vc2?:vc presentViewController:self.debugVC animated:YES completion:nil];
     }
     else {
         [self.debugVC dismissViewControllerAnimated:YES completion:nil];
