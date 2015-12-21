@@ -14,8 +14,20 @@
 
 @interface JxbDebugTool : NSObject
 
-@property (nonatomic,copy) UIColor* mainColor;
-@property (nonatomic,assign) int    maxLogsCount;
+/**
+ *  主色调
+ */
+@property (nonatomic, copy)     UIColor     *mainColor;
+
+/**
+ *  日志最大数量，默认50条
+ */
+@property (nonatomic, assign)   int         maxLogsCount;
+
+/**
+ *  设置只抓取的域名，忽略大小写，默认抓取所有
+ */
+@property (nonatomic, strong)   NSArray     *arrOnlyHosts;
 
 
 + (instancetype)shareInstance;

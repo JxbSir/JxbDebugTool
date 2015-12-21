@@ -40,6 +40,16 @@
     if ([NSURLProtocol propertyForKey:myProtocolKey inRequest:request] ) {
         return NO;
     }
+    
+    if ([[JxbDebugTool shareInstance] arrOnlyHosts].count > 0) {
+        NSString* url = [request.URL.absoluteString lowercaseString];
+        for (NSString* _url in [JxbDebugTool shareInstance].arrOnlyHosts) {
+            if ([url rangeOfString:[_url lowercaseString]].location != NSNotFound)
+                return YES;
+        }
+        return NO;
+    }
+    
     return YES;
 }
 

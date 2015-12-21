@@ -81,7 +81,7 @@
     self.title = @"Log";
     maxCount = [JxbDebugTool shareInstance].maxLogsCount;
     if (maxCount == 0)
-        maxCount = 30;
+        maxCount = 50;
     
     txt = [[UITextView alloc] init];
     [txt setEditable:NO];
