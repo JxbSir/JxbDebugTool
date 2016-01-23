@@ -10,6 +10,7 @@
 
 
 @interface JxbHttpModel : NSObject
+@property (nonatomic,copy)NSString  *requestId;
 @property (nonatomic,copy)NSURL     *url;
 @property (nonatomic,copy)NSString  *method;
 @property (nonatomic,copy)NSString  *requestBody;
@@ -23,6 +24,7 @@
 @interface JxbHttpDatasource : NSObject
 
 @property (nonatomic,strong,readonly) NSMutableArray    *httpArray;
+@property (nonatomic,strong,readonly) NSMutableArray    *arrRequest;
 
 + (instancetype)shareInstance;
 /**
@@ -36,4 +38,13 @@
  *  清空
  */
 - (void)clear;
+
+/**
+ *  解析
+ *
+ *  @param data
+ *
+ *  @return 
+ */
++ (NSString *)prettyJSONStringFromData:(NSData *)data;
 @end
