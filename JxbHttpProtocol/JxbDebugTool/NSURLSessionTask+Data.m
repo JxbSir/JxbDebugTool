@@ -11,6 +11,13 @@
 
 @implementation NSURLSessionTask (Data)
 
+- (NSString*)taskDataIdentify {
+    return objc_getAssociatedObject(self, @"taskDataIdentify");
+}
+- (void)setTaskDataIdentify:(NSString*)name {
+    objc_setAssociatedObject(self, @"taskDataIdentify", name, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 - (NSMutableData*)responseDatas {
     return objc_getAssociatedObject(self, @"responseDatas");
 }

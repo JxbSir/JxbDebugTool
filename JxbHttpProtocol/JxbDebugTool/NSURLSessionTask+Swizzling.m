@@ -259,8 +259,10 @@
 - (void)URLSession_swizzling:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     if(!dataTask.responseDatas) {
         dataTask.responseDatas = [NSMutableData data];
+        dataTask.taskDataIdentify = NSStringFromClass([self class]);
     }
-    [dataTask.responseDatas appendData:data];
+    if ([dataTask.taskDataIdentify isEqualToString:NSStringFromClass([self class])])
+        [dataTask.responseDatas appendData:data];
     [self URLSession_swizzling:session dataTask:dataTask didReceiveData:data];
 }
 

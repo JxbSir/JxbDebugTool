@@ -10,6 +10,9 @@
 
 @interface NSURLSessionTask (Data)
 
+- (NSString*)taskDataIdentify;
+- (void)setTaskDataIdentify:(NSString*)name;
+
 - (NSMutableData*)responseDatas;
 - (void)setResponseDatas:(NSMutableData*)data;
 
