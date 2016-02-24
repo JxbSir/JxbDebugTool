@@ -10,5 +10,4 @@
 
 @interface NSURLSession (Swizzling)
 
-
 @end

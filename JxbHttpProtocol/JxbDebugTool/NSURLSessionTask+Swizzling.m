@@ -12,6 +12,7 @@
 #import "JxbDebugTool.h"
 #import "NSURLRequest+Identify.h"
 #import "NSURLResponse+Data.h"
+#import "NSURLSessionTask+Data.h"
 
 @class NSURLSession;
 
@@ -139,6 +140,21 @@
     NSURLRequest* req = task.originalRequest;
     if ([[[JxbHttpDatasource shareInstance] arrRequest] containsObject:req.requestId])
         return;
+    
+    BOOL canHandle = YES;
+    if ([[JxbDebugTool shareInstance] arrOnlyHosts].count > 0) {
+        canHandle = NO;
+        NSString* url = [req.URL.absoluteString lowercaseString];
+        for (NSString* _url in [JxbDebugTool shareInstance].arrOnlyHosts) {
+            if ([url rangeOfString:[_url lowercaseString]].location != NSNotFound) {
+                canHandle = YES;
+                break;
+            }
+        }
+    }
+    if (!canHandle)
+        return;
+    
     NSURLResponse* resp = task.response;
     
     JxbHttpModel* model = [[JxbHttpModel alloc] init];
@@ -150,8 +166,8 @@
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)resp;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
-    if (resp.responseData) {
-        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:resp.responseData];
+    if (task.responseDatas) {
+        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:task.responseDatas];
     }
     model.mineType = resp.MIMEType;
     
@@ -241,8 +257,10 @@
 }
 
 - (void)URLSession_swizzling:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-    NSURLResponse* response = dataTask.response;
-    response.responseData = data;
+    if(!dataTask.responseDatas) {
+        dataTask.responseDatas = [NSMutableData data];
+    }
+    [dataTask.responseDatas appendData:data];
     [self URLSession_swizzling:session dataTask:dataTask didReceiveData:data];
 }
 
