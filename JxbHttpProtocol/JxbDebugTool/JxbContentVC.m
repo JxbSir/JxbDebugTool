@@ -36,12 +36,24 @@
     UIBarButtonItem *btnright = [[UIBarButtonItem alloc] initWithCustomView:btnCopy];
     self.navigationItem.rightBarButtonItem = btnright;
     
-    txt = [[UITextView alloc] init];
+    txt = [[UITextView alloc] initWithFrame:self.view.bounds];
     [txt setEditable:NO];
+    txt.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
+    txt.font = [UIFont systemFontOfSize:13];
     txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    txt.frame = self.view.bounds;
     txt.text = self.content;
+    
     [self.view addSubview:txt];
+    
+    NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:13],
+                                 NSParagraphStyleAttributeName : style};
+    CGRect r = [self.content boundingRectWithSize:CGSizeMake(self.view.bounds.size.width, MAXFLOAT) options:option attributes:attributes context:nil];
+    txt.contentSize = CGSizeMake(self.view.bounds.size.width, r.size.height);
 }
 
 - (void)copyAction {
