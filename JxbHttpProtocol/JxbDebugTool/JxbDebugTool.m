@@ -55,9 +55,6 @@
     if (self) {
         self.mainColor = [UIColor redColor];
         self.debugWin = [[JxbDebugWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-        
-        self.debugTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMonitor) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:self.debugTimer forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
@@ -84,6 +81,9 @@
     [self.debugBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.debugBtn addTarget:self action:@selector(showDebug) forControlEvents:UIControlEventTouchUpInside];
     [self.debugWin addSubview:self.debugBtn];
+    
+    self.debugTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerMonitor) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.debugTimer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)showDebug {

@@ -186,7 +186,7 @@
     [self swizzling_TaskDidReceiveDataIntoDelegateClass:cls];
     [self swizzling_TaskDidBecomeDownloadTaskIntoDelegateClass:cls];
     [self swizzling_TaskDidBecomeStreamTaskIntoDelegateClass:cls];
-    [self swizzling_TaskWillCacheResponseIntoDelegateClass:cls];
+//    [self swizzling_TaskWillCacheResponseIntoDelegateClass:cls];
 }
 
 + (void)swizzling_TaskDidReceiveResponseIntoDelegateClass:(Class)cls {
