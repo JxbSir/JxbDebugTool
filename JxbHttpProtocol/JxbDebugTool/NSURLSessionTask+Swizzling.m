@@ -162,12 +162,24 @@
     model.url = req.URL;
     model.method = req.HTTPMethod;
     if (req.HTTPBody) {
-        model.requestBody = [JxbHttpDatasource prettyJSONStringFromData:req.HTTPBody];
+        NSData* data = req.HTTPBody;
+        if ([[JxbDebugTool shareInstance] isHttpRequestEncrypt]) {
+            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                data = [[JxbDebugTool shareInstance].delegate decryptJson:req.HTTPBody];
+            }
+        }
+        model.requestBody = [JxbHttpDatasource prettyJSONStringFromData:data];
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)resp;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     if (task.responseDatas) {
-        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:task.responseDatas];
+        NSData* data = task.responseDatas;
+        if ([[JxbDebugTool shareInstance] isHttpResponseEncrypt]) {
+            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                data = [[JxbDebugTool shareInstance].delegate decryptJson:task.responseDatas];
+            }
+        }
+        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:data];
     }
     model.mineType = resp.MIMEType;
     

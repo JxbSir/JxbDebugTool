@@ -75,12 +75,24 @@
     model.url = self.request.URL;
     model.method = self.request.HTTPMethod;
     if (self.request.HTTPBody) {
-        model.requestBody = [self prettyJSONStringFromData:self.request.HTTPBody];
+        NSData* data = self.request.HTTPBody;
+        if ([[JxbDebugTool shareInstance] isHttpRequestEncrypt]) {
+            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                data = [[JxbDebugTool shareInstance].delegate decryptJson:self.request.HTTPBody];
+            }
+        }
+        model.requestBody = [JxbHttpDatasource prettyJSONStringFromData:data];
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)self.response;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     if (self.data) {
-        model.responseBody = [self prettyJSONStringFromData:self.data];
+        NSData* data = self.data;
+        if ([[JxbDebugTool shareInstance] isHttpResponseEncrypt]) {
+            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                data = [[JxbDebugTool shareInstance].delegate decryptJson:self.data];
+            }
+        }
+        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:data];
     }
     model.mineType = self.response.MIMEType;
     
@@ -89,23 +101,6 @@
     
     [[JxbHttpDatasource shareInstance] addHttpRequset:model];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyKeyReloadHttp object:nil];
-}
-
-#pragma mark - parse
-- (NSString *)prettyJSONStringFromData:(NSData *)data
-{
-    NSString *prettyString = nil;
-    
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-    if ([NSJSONSerialization isValidJSONObject:jsonObject]) {
-        prettyString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding];
-        // NSJSONSerialization escapes forward slashes. We want pretty json, so run through and unescape the slashes.
-        prettyString = [prettyString stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
-    } else {
-        prettyString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    }
-    
-    return prettyString;
 }
 
 #pragma mark - NSURLConnectionDelegate

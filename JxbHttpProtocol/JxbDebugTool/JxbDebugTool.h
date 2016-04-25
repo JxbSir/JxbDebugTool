@@ -12,12 +12,31 @@
 #define kNotifyKeyReloadHttp    @"kNotifyKeyReloadHttp"
 
 
+@protocol JxbDebugDelegate <NSObject>
+- (NSData*)decryptJson:(NSData*)data;
+@end
+
 @interface JxbDebugTool : NSObject
 
 /**
  *  主色调
  */
 @property (nonatomic, copy)     UIColor     *mainColor;
+
+/**
+ *  设置代理
+ */
+@property (nonatomic, weak) id<JxbDebugDelegate> delegate;
+
+/**
+ *  http请求数据是否加密，默认不加密
+ */
+@property (nonatomic, assign)   BOOL        isHttpRequestEncrypt;
+
+/**
+ *  http响应数据是否加密，默认不加密
+ */
+@property (nonatomic, assign)   BOOL        isHttpResponseEncrypt;
 
 /**
  *  日志最大数量，默认50条
