@@ -20,6 +20,16 @@
     
     self.title = @"hehehe";
     
+    UIImageView* img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [self.view addSubview:img];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSData* data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://developer.qiniu.com/docs/v6/api/overview/up/response/img/upload-with-callback.png"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            img.image = [UIImage imageWithData:data];
+        });
+        
+    });
+    
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
     btn.backgroundColor = [UIColor redColor];
     [self.view addSubview:btn];

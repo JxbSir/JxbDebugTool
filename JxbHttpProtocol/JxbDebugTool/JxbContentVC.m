@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIButton *btnclose = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     btnclose.titleLabel.font = [UIFont systemFontOfSize:13];
     [btnclose setTitle:@"Back" forState:UIControlStateNormal];
