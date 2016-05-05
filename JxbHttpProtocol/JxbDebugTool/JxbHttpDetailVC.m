@@ -9,6 +9,7 @@
 #import "JxbHttpDetailVC.h"
 #import "JxbHttpCell.h"
 #import "JxbContentVC.h"
+#import "JxbResponseVC.h"
 #import "JxbDebugTool.h"
 
 #define detailTitles   @[@"Request Url",@"Method",@"Status Code",@"Mime Type",@"Start Time",@"Total Duration",@"Request Body",@"Response Body"]
@@ -108,7 +109,7 @@
         }
     }
     else if (indexPath.row == 7) {
-        if (self.detail.responseBody.length > 0) {
+        if (self.detail.responseData.length > 0) {
             value = @"Tap to view";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
@@ -122,24 +123,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    JxbContentVC* vc = [[JxbContentVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
     if (indexPath.row == 0) {
+        JxbContentVC* vc = [[JxbContentVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
         vc.content = self.detail.url.absoluteString;
         vc.title = @"接口地址";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.row == 6 && self.detail.requestBody.length > 0) {
+        JxbContentVC* vc = [[JxbContentVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
         vc.content = self.detail.requestBody;
         vc.title = @"请求数据";
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    else if (indexPath.row == 7 && self.detail.responseBody.length > 0) {
-        vc.content = self.detail.responseBody;
+    else if (indexPath.row == 7 && self.detail.responseData.length > 0) {
+        JxbResponseVC* vc = [[JxbResponseVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.data = self.detail.responseData;
+        vc.isImage = self.detail.isImage;
         vc.title = @"返回数据";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else {
         return;
     }
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

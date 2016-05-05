@@ -74,6 +74,7 @@
     JxbHttpModel* model = [[JxbHttpModel alloc] init];
     model.url = self.request.URL;
     model.method = self.request.HTTPMethod;
+    model.mineType = self.response.MIMEType;
     if (self.request.HTTPBody) {
         NSData* data = self.request.HTTPBody;
         if ([[JxbDebugTool shareInstance] isHttpRequestEncrypt]) {
@@ -85,17 +86,8 @@
     }
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)self.response;
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
-    if (self.data) {
-        NSData* data = self.data;
-        if ([[JxbDebugTool shareInstance] isHttpResponseEncrypt]) {
-            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
-                data = [[JxbDebugTool shareInstance].delegate decryptJson:self.data];
-            }
-        }
-        model.responseBody = [JxbHttpDatasource prettyJSONStringFromData:data];
-    }
-    model.mineType = self.response.MIMEType;
-    
+    model.responseData = self.data;
+    model.isImage = [self.response.MIMEType rangeOfString:@"image"].location != NSNotFound;
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - self.startTime];
     model.startTime = [NSString stringWithFormat:@"%fs",self.startTime];
     

@@ -20,6 +20,7 @@
 		D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */; };
 		D0578CF81BF5D38900F9B9C1 /* JxbMemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */; };
 		D063C9A41C7D892400A4728C /* NSURLSessionTask+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = D063C9A31C7D892400A4728C /* NSURLSessionTask+Data.m */; };
+		D081FFD21CDB1186001F2618 /* JxbResponseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D081FFD11CDB1186001F2618 /* JxbResponseVC.m */; };
 		D089CDED1C5367E7000C22B2 /* NSURLRequest+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = D089CDE81C5367E7000C22B2 /* NSURLRequest+Identify.m */; };
 		D089CDEE1C5367E7000C22B2 /* NSURLResponse+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = D089CDEA1C5367E7000C22B2 /* NSURLResponse+Data.m */; };
 		D089CDEF1C5367E7000C22B2 /* NSURLSessionTask+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = D089CDEC1C5367E7000C22B2 /* NSURLSessionTask+Swizzling.m */; };
@@ -60,6 +61,8 @@
 		D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbMemoryHelper.m; sourceTree = "<group>"; };
 		D063C9A21C7D892400A4728C /* NSURLSessionTask+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Data.h"; sourceTree = "<group>"; };
 		D063C9A31C7D892400A4728C /* NSURLSessionTask+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Data.m"; sourceTree = "<group>"; };
+		D081FFD01CDB1186001F2618 /* JxbResponseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbResponseVC.h; sourceTree = "<group>"; };
+		D081FFD11CDB1186001F2618 /* JxbResponseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbResponseVC.m; sourceTree = "<group>"; };
 		D089CDE71C5367E7000C22B2 /* NSURLRequest+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Identify.h"; sourceTree = "<group>"; };
 		D089CDE81C5367E7000C22B2 /* NSURLRequest+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Identify.m"; sourceTree = "<group>"; };
 		D089CDE91C5367E7000C22B2 /* NSURLResponse+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Data.h"; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				D052C6461BF4CD2800DFD138 /* JxbDebugVC.m */,
 				D052C63D1BF4CD2800DFD138 /* JxbContentVC.h */,
 				D052C63E1BF4CD2800DFD138 /* JxbContentVC.m */,
+				D081FFD01CDB1186001F2618 /* JxbResponseVC.h */,
+				D081FFD11CDB1186001F2618 /* JxbResponseVC.m */,
 				D0FF739A1BF58C8B00615B23 /* JxbBaseVC.h */,
 				D0FF739B1BF58C8B00615B23 /* JxbBaseVC.m */,
 			);
@@ -369,6 +374,7 @@
 				D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */,
 				D089CDED1C5367E7000C22B2 /* NSURLRequest+Identify.m in Sources */,
 				D052C6551BF4CD2800DFD138 /* JxbHttpDetailVC.m in Sources */,
+				D081FFD21CDB1186001F2618 /* JxbResponseVC.m in Sources */,
 				D0578CF81BF5D38900F9B9C1 /* JxbMemoryHelper.m in Sources */,
 				D0F81BE01BF4354C0097449F /* main.m in Sources */,
 				D0FF739C1BF58C8B00615B23 /* JxbBaseVC.m in Sources */,

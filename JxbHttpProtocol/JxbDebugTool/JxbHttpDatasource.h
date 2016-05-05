@@ -15,7 +15,8 @@
 @property (nonatomic,copy)NSString  *method;
 @property (nonatomic,copy)NSString  *requestBody;
 @property (nonatomic,copy)NSString  *statusCode;
-@property (nonatomic,copy)NSString  *responseBody;
+@property (nonatomic,copy)NSData    *responseData;
+@property (nonatomic,assign)BOOL    isImage;
 @property (nonatomic,copy)NSString  *mineType;
 @property (nonatomic,copy)NSString  *startTime;
 @property (nonatomic,copy)NSString  *totalDuration;
