@@ -109,8 +109,15 @@
         }
     }
     else if (indexPath.row == 7) {
-        if (self.detail.responseData.length > 0) {
-            value = @"Tap to view";
+        NSInteger lenght = self.detail.responseData.length;
+        if (lenght > 0) {
+            if (lenght < 1024) {
+                value = [NSString stringWithFormat:@"(%zdB) Tap to view",lenght];
+            }
+            else {
+                value = [NSString stringWithFormat:@"(%.2fKB) Tap to view",1.0 * lenght / 1024];
+            }
+            
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         else {
