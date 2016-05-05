@@ -48,7 +48,7 @@
         txt.font = [UIFont systemFontOfSize:13];
         txt.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        NSData* contentdata = nil;
+        NSData* contentdata = self.data;
         if ([[JxbDebugTool shareInstance] isHttpResponseEncrypt]) {
             if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
                 contentdata = [[JxbDebugTool shareInstance].delegate decryptJson:self.data];
