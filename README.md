@@ -9,7 +9,7 @@
 
 -------
 ##支持CocoaPods引入
-`pod 'JxbDebugTool', '~> 4.3', :configurations => ['Debug']`
+`pod 'JxbDebugTool', '~> 4.4', :configurations => ['Debug']`
 
 -------
 ##启用代码
