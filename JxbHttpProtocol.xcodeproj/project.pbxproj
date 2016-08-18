@@ -19,6 +19,7 @@
 		D052C6561BF4CD2800DFD138 /* JxbHttpProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64C1BF4CD2800DFD138 /* JxbHttpProtocol.m */; };
 		D052C6571BF4CD2800DFD138 /* JxbHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */; };
 		D0578CF81BF5D38900F9B9C1 /* JxbMemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */; };
+		D05E9F0E1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = D05E9F0D1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */; };
 		D063C9A41C7D892400A4728C /* NSURLSessionTask+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = D063C9A31C7D892400A4728C /* NSURLSessionTask+Data.m */; };
 		D081FFD21CDB1186001F2618 /* JxbResponseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D081FFD11CDB1186001F2618 /* JxbResponseVC.m */; };
 		D089CDED1C5367E7000C22B2 /* NSURLRequest+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = D089CDE81C5367E7000C22B2 /* NSURLRequest+Identify.m */; };
@@ -59,6 +60,8 @@
 		D052C64E1BF4CD2800DFD138 /* JxbHttpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbHttpVC.m; sourceTree = "<group>"; };
 		D0578CF61BF5D38900F9B9C1 /* JxbMemoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbMemoryHelper.h; sourceTree = "<group>"; };
 		D0578CF71BF5D38900F9B9C1 /* JxbMemoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbMemoryHelper.m; sourceTree = "<group>"; };
+		D05E9F0C1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h; sourceTree = "<group>"; };
+		D05E9F0D1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m; sourceTree = "<group>"; };
 		D063C9A21C7D892400A4728C /* NSURLSessionTask+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+Data.h"; sourceTree = "<group>"; };
 		D063C9A31C7D892400A4728C /* NSURLSessionTask+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+Data.m"; sourceTree = "<group>"; };
 		D081FFD01CDB1186001F2618 /* JxbResponseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JxbResponseVC.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				D089CDEC1C5367E7000C22B2 /* NSURLSessionTask+Swizzling.m */,
 				D063C9A21C7D892400A4728C /* NSURLSessionTask+Data.h */,
 				D063C9A31C7D892400A4728C /* NSURLSessionTask+Data.m */,
+				D05E9F0C1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.h */,
+				D05E9F0D1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m */,
 				D052C6471BF4CD2800DFD138 /* JxbHttpCell.h */,
 				D052C6481BF4CD2800DFD138 /* JxbHttpCell.m */,
 				D052C64D1BF4CD2800DFD138 /* JxbHttpVC.h */,
@@ -370,6 +375,7 @@
 				D0F81BE61BF4354C0097449F /* ViewController.m in Sources */,
 				D063C9A41C7D892400A4728C /* NSURLSessionTask+Data.m in Sources */,
 				D052C6511BF4CD2800DFD138 /* JxbCrashVC.m in Sources */,
+				D05E9F0E1D65A2F700EB4D96 /* JxbUrlSessionHook_NSURLSessionAsynchronousConvenience.m in Sources */,
 				D052C6541BF4CD2800DFD138 /* JxbHttpCell.m in Sources */,
 				D0F81BE31BF4354C0097449F /* AppDelegate.m in Sources */,
 				D089CDED1C5367E7000C22B2 /* NSURLRequest+Identify.m in Sources */,

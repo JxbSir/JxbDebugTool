@@ -20,6 +20,16 @@
 @property (nonatomic,copy)NSString  *mineType;
 @property (nonatomic,copy)NSString  *startTime;
 @property (nonatomic,copy)NSString  *totalDuration;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param data <#data description#>
+ *  @param resp <#resp description#>
+ *  @param req  <#req description#>
+ */
++ (void)dealwithResponse:(NSData *)data resp:(NSURLResponse*)resp req:(NSURLRequest *)req;
 @end
 
 @interface JxbHttpDatasource : NSObject
@@ -48,4 +58,5 @@
  *  @return 
  */
 + (NSString *)prettyJSONStringFromData:(NSData *)data;
+
 @end

@@ -39,6 +39,15 @@
     [self.window makeKeyWindow];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = tabbar;
+   
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSURLSession* session = [NSURLSession sharedSession];
+        NSURLSessionTask* task = [session dataTaskWithURL:[NSURL URLWithString:@"http://api.cuitrip.com/baseservice/getCountryCity"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
+        }];
+        [task resume];
+    });
+    
     
     return YES;
 }

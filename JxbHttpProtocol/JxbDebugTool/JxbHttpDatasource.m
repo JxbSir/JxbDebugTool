@@ -7,8 +7,44 @@
 //
 
 #import "JxbHttpDatasource.h"
+#import "NSURLRequest+Identify.h"
+#import "NSURLResponse+Data.h"
+#import "NSURLSessionTask+Data.h"
+#import "JxbDebugTool.h"
 
 @implementation JxbHttpModel
+
+#pragma mark - deal with response
++ (void)dealwithResponse:(NSData *)data resp:(NSURLResponse*)resp req:(NSURLRequest *)req {
+    JxbHttpModel* model = [[JxbHttpModel alloc] init];
+    model.requestId = req.requestId;
+    model.url = resp.URL;
+    model.mineType = resp.MIMEType;
+    if (req.HTTPBody) {
+        NSData* data = req.HTTPBody;
+        if ([[JxbDebugTool shareInstance] isHttpRequestEncrypt]) {
+            if ([[JxbDebugTool shareInstance] delegate] && [[JxbDebugTool shareInstance].delegate respondsToSelector:@selector(decryptJson:)]) {
+                data = [[JxbDebugTool shareInstance].delegate decryptJson:req.HTTPBody];
+            }
+        }
+        model.requestBody = [JxbHttpDatasource prettyJSONStringFromData:data];
+    }
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)resp;
+    model.method = httpResponse.allHeaderFields[@"Allow"];
+    model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
+    model.responseData = data;
+    model.isImage = [resp.MIMEType rangeOfString:@"image"].location != NSNotFound;
+    
+    model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - req.startTime.doubleValue];
+    model.startTime = [NSString stringWithFormat:@"%fs",req.startTime.doubleValue];
+    
+    [[JxbHttpDatasource shareInstance] addHttpRequset:model];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyKeyReloadHttp object:nil];
+    });
+
+}
+
 @end
 
 @implementation JxbHttpDatasource
@@ -69,4 +105,5 @@
     
     return prettyString;
 }
+
 @end
